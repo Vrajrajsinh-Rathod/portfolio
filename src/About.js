@@ -37,13 +37,13 @@ const aboutContainer = {
   flexWrap: 'wrap',
 };
 
-const aboutImage = {
-  borderRadius: '10px',
-  width: '200px',
-  height: '200px',
-  objectFit: 'cover',
-  border: '3px solid #222',
-};
+// const aboutImage = {
+//   borderRadius: '10px',
+//   width: '200px',
+//   height: '200px',
+//   objectFit: 'cover',
+//   border: '3px solid #222',
+// };
 
 const aboutText = {
   flex: 1,

@@ -29,7 +29,7 @@ const Hero = () => {
         </a>
       </div>
       <img
-        src="%PUBLIC_URL%/21004063.jpg"
+        src={`${process.env.PUBLIC_URL}/21004063.jpg`}
         alt="Vrajraj"
         style={imageStyle}
       />

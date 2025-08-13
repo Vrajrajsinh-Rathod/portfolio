@@ -29,7 +29,7 @@ const Hero = () => {
         </a>
       </div>
       <img
-        src="/21004063.jpg"
+        src="%PUBLIC_URL%/21004063.jpg"
         alt="Vrajraj"
         style={imageStyle}
       />

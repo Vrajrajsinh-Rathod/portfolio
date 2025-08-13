@@ -1,69 +1,79 @@
 import React from 'react';
+
 const Hero = () => {
+  const heroStyle = {
+    minHeight: '70vh',
+    padding: '50px 20px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    backgroundColor: '#f5f5f5',
+    flexWrap: 'wrap-reverse', // image goes above text on small screens
+    gap: '20px',
+  };
+
+  const textContainerStyle = {
+    maxWidth: '600px',
+    textAlign: 'center',
+  };
+
+  const imageStyle = {
+    borderRadius: '50%',
+    width: '300px',
+    height: '300px',
+    objectFit: 'cover',
+    border: '4px solid #222',
+  };
+
+  const buttonStyle = {
+    backgroundColor: '#007BFF',
+    color: '#fff',
+    padding: '12px 24px',
+    border: 'none',
+    borderRadius: '8px',
+    fontSize: '16px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s ease',
+  };
+
+  const handleMouseOver = (e) => {
+    e.currentTarget.style.backgroundColor = '#0056b3';
+  };
+
+  const handleMouseOut = (e) => {
+    e.currentTarget.style.backgroundColor = '#007BFF';
+  };
+
   return (
     <section id="hero" style={heroStyle}>
-      <div>
-        <h1 style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>Hi, I'm Vrajrajsinh Rathod</h1>
-        <p style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#666' }}>
-          Software Engineer | Cloud & API Specialist
+      <div style={textContainerStyle}>
+        <h1 style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
+          Hi, I'm Vrajrajsinh Rathod
+        </h1>
+        <p style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#666' }}>
+          Software Engineer | Cloud & API Specialist | Python, PHP, Node.js
         </p>
-        <a href="https://drive.google.com/file/d/1GbHZGvZuHIoxdkqplFbKxyhMbRniEIlc/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-        <button
-            style={{
-            backgroundColor: '#007BFF',
-            color: 'white',
-            padding: '12px 20px',
-            border: 'none',
-            borderRadius: '8px',
-            fontSize: '16px',
-            alignItems: 'center',
-            gap: '10px',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s ease',
-            }}
-            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#0056b3')}
-            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#007BFF')}
+        <a
+          href="https://drive.google.com/file/d/1GbHZGvZuHIoxdkqplFbKxyhMbRniEIlc/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
         >
+          <button
+            style={buttonStyle}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+          >
             See My Resume
-        </button>
+          </button>
         </a>
       </div>
       <img
         src={`${process.env.PUBLIC_URL}/21004063.jpg`}
-        alt="Vrajraj"
+        alt="Vrajrajsinh Rathod"
         style={imageStyle}
       />
     </section>
   );
-};
-
-const heroStyle = {
-  minHeight: '70vh',
-  paddingTop: '10px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-around',
-  backgroundColor: '#f5f5f5',
-  flexWrap: 'wrap',
-  gap: '20px',
-};
-
-const imageStyle = {
-  borderRadius: '50%',
-  width: '300px',
-  height: '300px',
-  objectFit: 'cover',
-  border: '4px solid #222',
-};
-
-const buttonStyle = {
-  display: 'inline-block',
-  padding: '10px 20px',
-  backgroundColor: '#222',
-  color: '#fff',
-  textDecoration: 'none',
-  borderRadius: '5px',
-  fontWeight: 'bold',
 };
 
 export default Hero;

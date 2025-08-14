@@ -148,14 +148,13 @@ const Projects = () => {
           margin-bottom: 15px;
           color: #66fcf1;
         }
-
-        /* Justify all text in project card */
+          
         .project-card p,
         .project-card li {
           font-size: 1.05rem;
           margin-bottom: 15px;
           color: #ccc;
-          text-align: justify;
+          
         }
 
         .project-card ul {

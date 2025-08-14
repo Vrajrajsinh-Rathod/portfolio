@@ -54,13 +54,12 @@ const headingStyle = {
 
 const aboutContainer = {
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'center', 
 };
 
 const aboutText = {
   fontSize: '1.15rem',
   lineHeight: '1.8',
-  textAlign: 'justify',
   borderLeft: '5px solid #00d4ff',
   paddingLeft: '20px',
   fontFamily: "'Fira Code', monospace",

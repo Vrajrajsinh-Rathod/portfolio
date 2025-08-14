@@ -149,20 +149,18 @@ const Projects = () => {
           color: #66fcf1;
         }
 
-        .project-card p {
+        /* Justify all text in project card */
+        .project-card p,
+        .project-card li {
           font-size: 1.05rem;
           margin-bottom: 15px;
           color: #ccc;
+          text-align: justify;
         }
 
         .project-card ul {
           padding-left: 20px;
           color: #ccc;
-        }
-
-        .project-card li {
-          margin-bottom: 8px;
-          position: relative;
         }
 
         .project-card li::before {
@@ -199,7 +197,8 @@ const Projects = () => {
         @media (max-width: 480px) {
           .projects-heading { font-size: 1.8rem; }
           .project-card h3 { font-size: 1.3rem; }
-          .project-card p { font-size: 0.95rem; }
+          .project-card p,
+          .project-card li { font-size: 0.95rem; }
         }
       `}</style>
     </section>

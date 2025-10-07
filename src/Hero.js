@@ -58,7 +58,7 @@ const Hero = () => {
           {skillText}<span style={cursorStyle}>|</span>
         </p>
         <a
-          href="https://drive.google.com/file/d/1ups1zzmjEDdAvKL7gUUbFfXNMF7bJEc1/view?usp=sharing"
+          href="https://drive.google.com/file/d/1z4iTmvBFgarO3YVTJNE7bWXZSP51NvBw/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >

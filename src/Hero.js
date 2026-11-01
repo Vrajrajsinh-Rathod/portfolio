@@ -44,7 +44,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               style={primaryBtnStyle}
             >
-              View Résumé
+              View Resume
             </a>
             <a href="#contact" style={secondaryBtnStyle}>
               Get in Touch

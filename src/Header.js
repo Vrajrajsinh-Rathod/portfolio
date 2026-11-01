@@ -39,7 +39,7 @@ const Header = () => {
           rel="noopener noreferrer"
           className="resume-btn desktop-only"
         >
-          Résumé
+          Resume
         </a>
 
         <div className="mobile-menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
@@ -67,7 +67,7 @@ const Header = () => {
               className="nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              Résumé
+              Resume
             </a>
           </div>
         )}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Hero = () => {
-  const fullSkill = "Software Engineer | Cloud & API Specialist";
+  const fullSkill = "Senior Python Developer | Full Stack Engineer";
   const [skillText, setSkillText] = useState("");
   const [animate, setAnimate] = useState(false);
   const [hover, setHover] = useState(false);

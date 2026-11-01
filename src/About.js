@@ -64,7 +64,7 @@ const aboutContainer = {
 const aboutText = {
   fontSize: '1.08rem',
   lineHeight: 1.85,
-  maxWidth: '720px',
+  maxWidth: '780px',
   color: '#aab0ba',
 };
 

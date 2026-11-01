@@ -48,7 +48,7 @@ const Skills = () => {
 const sectionStyle = {
   padding: '90px 20px',
   backgroundColor: '#0b0d12',
-  minHeight: '80vh',
+  borderTop: '1px solid #1c2028',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

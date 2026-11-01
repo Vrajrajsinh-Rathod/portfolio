@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuItems = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+  const menuItems = ['Home', 'About', 'Experience', 'Skills', 'Projects', 'Contact'];
 
   return (
     <header style={headerStyle}>

@@ -1,4 +1,3 @@
-// test-marker-abc123
 import React, { useState } from 'react';
 
 const Header = () => {

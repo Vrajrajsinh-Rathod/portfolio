@@ -7,7 +7,8 @@ const Header = () => {
   return (
     <header style={headerStyle}>
       <nav style={navStyle}>
-        {/* Desktop Menu */}
+        <a href="#home" className="logo">VR</a>
+
         <div className="desktop-menu">
           {menuItems.map((item) => (
             <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">
@@ -16,14 +17,21 @@ const Header = () => {
           ))}
         </div>
 
-        {/* Mobile Hamburger */}
+        <a
+          href={`${process.env.PUBLIC_URL}/Vrajrajsinh_Rathod_Resume.pdf`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="resume-btn desktop-only"
+        >
+          Résumé
+        </a>
+
         <div className="mobile-menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
           <div className="burger-line"></div>
           <div className="burger-line"></div>
           <div className="burger-line"></div>
         </div>
 
-        {/* Mobile Menu */}
         {menuOpen && (
           <div className="mobile-menu">
             {menuItems.map((item) => (
@@ -36,6 +44,15 @@ const Header = () => {
                 {item}
               </a>
             ))}
+            <a
+              href={`${process.env.PUBLIC_URL}/Vrajrajsinh_Rathod_Resume.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              Résumé
+            </a>
           </div>
         )}
       </nav>
@@ -45,31 +62,40 @@ const Header = () => {
           position: fixed;
           top: 0;
           width: 100%;
-          background: rgba(17,17,34,0.95);
+          background: rgba(11,13,18,0.92);
           backdrop-filter: blur(8px);
           z-index: 1000;
-          box-shadow: 0 4px 20px rgba(0,212,255,0.3);
+          border-bottom: 1px solid #1c2028;
         }
 
         nav {
           max-width: 1200px;
           margin: 0 auto;
           display: flex;
-          justify-content: center; /* Center menu on large screens */
+          justify-content: space-between;
           align-items: center;
-          padding: 10px 20px;
+          padding: 14px 24px;
           position: relative;
+        }
+
+        .logo {
+          color: #e8eaed;
+          text-decoration: none;
+          font-weight: 800;
+          font-size: 1.05rem;
+          letter-spacing: -0.01em;
+          font-family: 'Inter', system-ui, sans-serif;
         }
 
         .nav-link {
           position: relative;
-          color: #fff;
+          color: #9aa3af;
           text-decoration: none;
-          font-family: 'Fira Code', monospace;
-          font-weight: bold;
-          margin: 0 25px; /* spacing between links */
-          transition: all 0.3s ease;
-          animation: neonPulse 2s infinite alternate;
+          font-family: 'Inter', system-ui, sans-serif;
+          font-weight: 500;
+          font-size: 0.95rem;
+          margin: 0 18px;
+          transition: color 0.2s ease;
         }
 
         .nav-link::after {
@@ -79,83 +105,88 @@ const Header = () => {
           bottom: -4px;
           width: 0;
           height: 2px;
-          background: #00d4ff;
-          transition: width 0.3s ease;
+          background: #2dd4bf;
+          transition: width 0.2s ease;
         }
 
         .nav-link:hover {
-          color: #00d4ff;
-          text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+          color: #e8eaed;
         }
 
         .nav-link:hover::after {
           width: 100%;
         }
 
-        @keyframes neonPulse {
-          0%, 100% { text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff, 0 0 20px #00d4ff; }
-          50% { text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #00d4ff; }
-        }
-
-        /* Desktop Menu */
         .desktop-menu {
           display: flex;
           align-items: center;
         }
 
-        /* Hamburger */
+        .resume-btn {
+          color: #c7cbd3;
+          text-decoration: none;
+          font-family: 'Inter', system-ui, sans-serif;
+          font-weight: 600;
+          font-size: 0.9rem;
+          border: 1px solid #2d3340;
+          border-radius: 8px;
+          padding: 8px 16px;
+          transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .resume-btn:hover {
+          border-color: #2dd4bf;
+          color: #2dd4bf;
+        }
+
         .mobile-menu-icon {
           display: none;
           flex-direction: column;
           justify-content: space-between;
-          width: 25px;
-          height: 20px;
+          width: 22px;
+          height: 16px;
           cursor: pointer;
         }
 
         .burger-line {
-          height: 3px;
-          background: #00d4ff;
+          height: 2px;
+          background: #e8eaed;
           border-radius: 2px;
         }
 
-        /* Mobile Menu */
         .mobile-menu {
           position: absolute;
-          top: 60px;
+          top: 54px;
           right: 20px;
-          background: rgba(17,17,34,0.95);
-          padding: 20px;
+          background: #12151c;
+          border: 1px solid #1c2028;
+          padding: 18px;
           border-radius: 10px;
-          box-shadow: 0 0 15px rgba(0,212,255,0.5);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.5);
           display: flex;
           flex-direction: column;
         }
 
+        .mobile-menu .nav-link {
+          margin: 8px 0;
+        }
+
         @media (max-width: 768px) {
-          nav {
-            justify-content: space-between; /* keep hamburger on right */
-          }
+          nav { justify-content: space-between; }
           .desktop-menu { display: none; }
+          .resume-btn.desktop-only { display: none; }
           .mobile-menu-icon { display: flex; }
         }
 
         @media (max-width: 480px) {
-          .mobile-menu {
-            right: 10px;
-            padding: 15px;
-          }
-          .nav-link {
-            font-size: 14px;
-            margin: 10px 0;
-          }
+          .mobile-menu { right: 10px; padding: 14px; }
+          .nav-link { font-size: 14px; }
         }
       `}</style>
     </header>
   );
 };
 
-// Inline styles
 const headerStyle = {};
 const navStyle = {};
 

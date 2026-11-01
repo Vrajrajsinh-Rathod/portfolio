@@ -2,6 +2,19 @@ import React from 'react';
 
 const projects = [
   {
+    title: 'TradeVest: AI Stock Prediction Platform',
+    year: '2025–2026',
+    role: 'Full Stack Developer',
+    description:
+      'Built an AI-powered stock prediction platform combining a React frontend, Node.js middleware and a FastAPI machine-learning service, backed by MongoDB Atlas and streaming live data via WebSockets.',
+    highlights: [
+      'Engineered an XGBoost-powered prediction engine trained on 10 years of market data across 9,457+ global equities, achieving 73.42% directional accuracy.',
+      'Deployed a decoupled microservice architecture across Vercel and Render with JWT authentication, achieving sub-100ms latency.',
+      'Designed the full data pipeline from ingestion through model inference to real-time client updates over WebSockets.',
+    ],
+    repo: 'https://github.com/Vrajrajsinh-Rathod/tradevest',
+  },
+  {
     title: 'LetMeKnow: Mobile Application',
     year: '2024',
     role: 'Full Stack Developer',
@@ -31,7 +44,7 @@ const projects = [
   },
   {
     title: 'Shoptronics: eCommerce Web Portal',
-    year: '2021–2022',
+    year: '',
     role: 'Lead Full Stack Developer',
     description:
       'Designed and developed a responsive eCommerce website with ReactJS frontend and PHP backend, supporting product catalogues, user accounts, and order management.',
@@ -44,7 +57,7 @@ const projects = [
   },
 ];
 
-const highlightKeywords = ['Python', 'PHP', 'Node.js', 'React', 'Flask', 'MongoDB', 'TensorFlow', 'eCommerce'];
+const highlightKeywords = ['Python', 'PHP', 'Node.js', 'React', 'Flask', 'FastAPI', 'MongoDB', 'TensorFlow', 'XGBoost', 'WebSockets', 'eCommerce'];
 
 const highlightText = (text) => {
   const regex = new RegExp(`\\b(${highlightKeywords.join('|')})\\b`, 'g');
@@ -57,10 +70,10 @@ const Projects = () => {
       <h2 className="projects-heading">Projects</h2>
 
       <div className="projects-wrapper">
-        {projects.map(({ title, year, role, description, highlights }) => (
+        {projects.map(({ title, year, role, description, highlights, repo }) => (
           <div key={title} className="project-card">
             <h3>
-              {title} <span className="project-year">({year})</span>
+              {title} {year && <span className="project-year">({year})</span>}
             </h3>
             <h4>{role}</h4>
             <p dangerouslySetInnerHTML={{ __html: highlightText(description) }} />
@@ -69,6 +82,11 @@ const Projects = () => {
                 <li key={i} dangerouslySetInnerHTML={{ __html: highlightText(point) }} />
               ))}
             </ul>
+            {repo && (
+              <a href={repo} target="_blank" rel="noopener noreferrer" className="project-link">
+                View on GitHub →
+              </a>
+            )}
           </div>
         ))}
       </div>
@@ -180,6 +198,19 @@ const Projects = () => {
         .highlight:hover {
           text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
           transform: scale(1.05);
+        }
+
+        .project-link {
+          display: inline-block;
+          margin-top: 5px;
+          color: #00d4ff;
+          text-decoration: none;
+          font-weight: bold;
+          transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+          text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
         }
 
         /* Responsive */

@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 const Contact = () => {
   return (
     <section id="contact" style={sectionStyle}>
+      <div style={eyebrowStyle}>Contact</div>
       <h2 style={headingStyle}>Let's Connect</h2>
 
       <p style={textStyle}>
@@ -39,36 +40,35 @@ const Contact = () => {
 
       <style>{`
         a {
-          transition: all 0.3s ease;
+          transition: color 0.2s ease, opacity 0.2s ease;
         }
 
         a:hover {
-          color: #ffcc00;
-          text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+          color: #2dd4bf;
+          opacity: 0.9;
         }
 
         .icon {
-          transition: all 0.3s ease;
+          transition: transform 0.2s ease;
         }
 
         a:hover .icon {
-          transform: scale(1.2);
-          filter: drop-shadow(0 0 6px #ffcc00);
+          transform: scale(1.1);
         }
 
         @media (max-width: 768px) {
-          h2 { font-size: 2.2rem !important; }
+          h2 { font-size: 1.9rem !important; }
           p { font-size: 1rem !important; }
-          .icon { width: 22px !important; height: 22px !important; }
-          #contact { padding: 40px 15px 100px; }
+          .icon { width: 20px !important; height: 20px !important; }
+          #contact { padding: 60px 15px 120px; }
           a[href^="mailto"] { display: inline-flex; flex-wrap: wrap; margin-top: 8px; gap: 5px; }
         }
 
         @media (max-width: 480px) {
-          h2 { font-size: 1.8rem !important; }
+          h2 { font-size: 1.6rem !important; }
           p { font-size: 0.95rem !important; }
           .icon { width: 18px !important; height: 18px !important; }
-          #contact { padding: 30px 10px 80px; }
+          #contact { padding: 50px 10px 100px; }
           a[href^="mailto"] { margin-top: 10px; gap: 4px; }
         }
       `}</style>
@@ -78,35 +78,46 @@ const Contact = () => {
 
 const sectionStyle = {
   position: 'relative',
-  padding: '60px 20px 150px',
-  minHeight: '70vh',
+  padding: '90px 20px 150px',
+  minHeight: '60vh',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  backgroundColor: '#1f1f3a',
-  color: '#f0f0f0',
-  fontFamily: "'Fira Code', monospace",
+  backgroundColor: '#10131a',
+  color: '#e8eaed',
+  fontFamily: "'Inter', system-ui, sans-serif",
   textAlign: 'center',
   overflow: 'hidden',
 };
 
+const eyebrowStyle = {
+  fontFamily: "'JetBrains Mono', monospace",
+  fontSize: '0.78rem',
+  fontWeight: 600,
+  letterSpacing: '0.08em',
+  color: '#2dd4bf',
+  textTransform: 'uppercase',
+  marginBottom: '12px',
+};
+
 const headingStyle = {
-  fontSize: '3rem',
+  fontSize: '2.2rem',
+  fontWeight: 800,
+  letterSpacing: '-0.01em',
   marginBottom: '25px',
-  color: '#00d4ff',
-  textShadow: '0 0 20px #00d4ff, 0 0 30px #00d4ff',
+  color: '#e8eaed',
 };
 
 const textStyle = {
-  fontSize: '1.2rem',
-  marginBottom: '15px',
-  color: '#ccc',
+  fontSize: '1.1rem',
+  marginBottom: '14px',
+  color: '#aab0ba',
 };
 
 const highlightLink = {
-  color: '#ffcc00',
-  fontWeight: 'bold',
+  color: '#e8eaed',
+  fontWeight: 700,
   textDecoration: 'none',
   display: 'inline-flex',
   alignItems: 'center',
@@ -117,20 +128,19 @@ const highlightLink = {
 const socialLinks = {
   display: 'flex',
   justifyContent: 'center',
-  gap: '40px',
-  marginTop: '20px',
+  gap: '36px',
+  marginTop: '16px',
   flexWrap: 'wrap',
 };
 
 const socialLinkStyle = {
   display: 'flex',
   alignItems: 'center',
-  gap: '10px',
-  fontSize: '1.2rem',
-  color: '#00d4ff',
+  gap: '9px',
+  fontSize: '1rem',
+  color: '#c7cbd3',
   textDecoration: 'none',
-  fontWeight: 'bold',
-  transition: 'all 0.3s ease',
+  fontWeight: 600,
 };
 
 export default Contact;

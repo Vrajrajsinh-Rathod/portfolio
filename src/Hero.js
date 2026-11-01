@@ -1,219 +1,275 @@
 import React, { useEffect, useState } from 'react';
 
+const accent = '#2dd4bf';
+
 const Hero = () => {
-  const fullSkill = "Senior Python Developer | Full Stack Engineer";
-  const [skillText, setSkillText] = useState("");
   const [animate, setAnimate] = useState(false);
-  const [hover, setHover] = useState(false);
 
   useEffect(() => {
     setAnimate(true);
-
-    let skillIndex = 0;
-    let forward = true;
-    let typingTimeout;
-
-    const type = () => {
-      const delay = Math.floor(Math.random() * 80) + 100; // 100-180ms per char
-
-      if (forward) {
-        setSkillText(fullSkill.slice(0, skillIndex + 1));
-        skillIndex++;
-        if (skillIndex === fullSkill.length) {
-          forward = false;
-          typingTimeout = setTimeout(type, 1000); // pause at full text
-          return;
-        }
-      } else {
-        setSkillText(fullSkill.slice(0, skillIndex - 1));
-        skillIndex--;
-        if (skillIndex === 0) {
-          forward = true;
-          typingTimeout = setTimeout(type, 500); // pause at empty
-          return;
-        }
-      }
-      typingTimeout = setTimeout(type, delay);
-    };
-
-    type();
-
-    return () => clearTimeout(typingTimeout);
   }, []);
 
   return (
-    <section id="home" style={sectionStyle}>
-      <div
-        style={{
-          ...contentStyle,
-          opacity: animate ? 1 : 0,
-          transform: animate ? 'translateY(0)' : 'translateY(50px)',
-          transition: 'all 1s ease-out'
-        }}
-      >
-        <h1 style={headingStyle}>
-          Hi, I'm <span style={{ color: '#00d4ff' }}>Vrajrajsinh Rathod</span>
-        </h1>
-        <p style={subHeadingStyle}>
-          {skillText}<span style={cursorStyle}>|</span>
-        </p>
-        <a
-          href={`${process.env.PUBLIC_URL}/Vrajrajsinh_Rathod_Resume.pdf`}
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <section id="home" style={sectionStyle}>
+        <div
+          style={{
+            ...contentStyle,
+            opacity: animate ? 1 : 0,
+            transform: animate ? 'translateY(0)' : 'translateY(24px)',
+            transition: 'opacity 0.7s ease-out, transform 0.7s ease-out',
+          }}
         >
-          <button
-            style={{ ...buttonStyle, ...(hover ? buttonHoverStyle : {}) }}
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-          >
-            <span style={glitchTextStyle}>See My Resume</span>
-          </button>
-        </a>
-      </div>
-      <img
-        src={`${process.env.PUBLIC_URL}/21004063.jpg`}
-        alt="Vrajraj"
-        style={{
-          ...imageStyle,
-          opacity: animate ? 1 : 0,
-          transform: animate ? 'translateY(0)' : 'translateY(50px)',
-          transition: 'all 1s ease-out 0.3s'
-        }}
-      />
-      <style>{`
-        @keyframes blink {
-          0% { opacity: 1; }
-          50% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-          100% { transform: translateY(0px); }
-        }
-        @keyframes glitch {
-          0% { transform: translate(0); opacity: 1; }
-          20% { transform: translate(-2px, 2px); opacity: 0.8; }
-          40% { transform: translate(2px, -2px); opacity: 0.6; }
-          60% { transform: translate(-2px, -2px); opacity: 0.8; }
-          80% { transform: translate(2px, 2px); opacity: 1; }
-          100% { transform: translate(0); opacity: 1; }
-        }
+          <div style={badgeStyle}>
+            <span style={badgeDotStyle}></span>
+            <span style={badgeTextStyle}>Open to contract &amp; full-time roles</span>
+          </div>
 
-        /* RESPONSIVE STYLES */
+          <h1 style={headingStyle}>Vrajrajsinh Rathod</h1>
+
+          <p style={roleStyle}>
+            Senior Python Developer <span style={{ color: '#4a5160' }}>·</span> Full Stack Engineer
+          </p>
+
+          <p style={bioStyle}>
+            5+ years building backend systems and APIs for fintech, e-commerce and healthcare —
+            currently contracting at Roboyo on a loan origination-to-decisioning platform used by
+            major US fintech clients.
+          </p>
+
+          <div style={ctaRowStyle}>
+            <a
+              href={`${process.env.PUBLIC_URL}/Vrajrajsinh_Rathod_Resume.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={primaryBtnStyle}
+            >
+              View Résumé
+            </a>
+            <a href="#contact" style={secondaryBtnStyle}>
+              Get in Touch
+            </a>
+          </div>
+        </div>
+
+        <div
+          style={{
+            ...photoWrapStyle,
+            opacity: animate ? 1 : 0,
+            transform: animate ? 'translateY(0)' : 'translateY(24px)',
+            transition: 'opacity 0.7s ease-out 0.15s, transform 0.7s ease-out 0.15s',
+          }}
+        >
+          <div style={glowStyle}></div>
+          <img
+            src={`${process.env.PUBLIC_URL}/Vrajrajsinh_Rathod_Profile.jpg`}
+            alt="Vrajrajsinh Rathod"
+            style={imageStyle}
+          />
+        </div>
+      </section>
+
+      <section style={statSectionStyle}>
+        <div className="stat-grid" style={statGridStyle}>
+          <div style={statItemStyle}>
+            <div style={statNumberStyle}>5+ yrs</div>
+            <div style={statLabelStyle}>backend &amp; full-stack experience</div>
+          </div>
+          <div style={statItemStyle}>
+            <div style={statNumberStyle}>99.9%</div>
+            <div style={statLabelStyle}>uptime on production APIs</div>
+          </div>
+          <div style={statItemStyle}>
+            <div style={statNumberStyle}>50k+</div>
+            <div style={statLabelStyle}>daily requests served</div>
+          </div>
+          <div style={statItemStyle}>
+            <div style={statNumberStyle}>35%</div>
+            <div style={statLabelStyle}>faster background processing</div>
+          </div>
+        </div>
+      </section>
+
+      <style>{`
         @media (max-width: 768px) {
           #home {
-            flex-direction: column;
+            flex-direction: column-reverse;
             text-align: center;
-            padding: 40px 20px;
-          }
-          #home img {
-            width: 200px;
-            height: 200px;
-            margin-top: 20px;
+            padding: 48px 24px !important;
           }
           #home h1 {
-            font-size: 2rem !important;
-          }
-          #home p {
-            font-size: 1rem !important;
+            font-size: 2.2rem !important;
           }
         }
-
         @media (max-width: 480px) {
           #home h1 {
-            font-size: 1.6rem !important;
+            font-size: 1.9rem !important;
           }
-          #home p {
-            font-size: 0.9rem !important;
-          }
-          #home img {
-            width: 150px;
-            height: 150px;
-          }
-          #home button {
-            padding: 10px 18px;
-            font-size: 14px;
+        }
+        @media (max-width: 640px) {
+          .stat-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
           }
         }
       `}</style>
-    </section>
+    </>
   );
 };
 
 const sectionStyle = {
-  minHeight: '80vh',
+  minHeight: '72vh',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-around',
+  justifyContent: 'center',
+  gap: '72px',
   flexWrap: 'wrap',
-  backgroundColor: '#1f1f3a',
-  padding: '20px',
-  color: '#f0f0f0',
+  backgroundColor: '#0b0d12',
+  padding: '96px 64px 72px',
+  color: '#e8eaed',
 };
 
 const contentStyle = {
-  maxWidth: '500px',
+  flex: '1 1 480px',
+  minWidth: 0,
+  maxWidth: '560px',
+};
+
+const badgeStyle = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '8px',
+  border: `1px solid ${accent}44`,
+  background: `${accent}14`,
+  borderRadius: '999px',
+  padding: '6px 14px',
+  marginBottom: '24px',
+};
+
+const badgeDotStyle = {
+  width: '7px',
+  height: '7px',
+  borderRadius: '999px',
+  background: accent,
+  display: 'inline-block',
+};
+
+const badgeTextStyle = {
+  fontFamily: "'JetBrains Mono', monospace",
+  fontSize: '0.72rem',
+  fontWeight: 600,
+  letterSpacing: '0.06em',
+  color: accent,
+  textTransform: 'uppercase',
 };
 
 const headingStyle = {
-  fontSize: '3rem',
-  marginBottom: '20px',
-  textShadow: '1px 1px 5px rgba(0,0,0,0.5)',
-  fontFamily: "'Fira Code', monospace",
+  margin: '0 0 14px',
+  fontSize: '3.2rem',
+  lineHeight: 1.08,
+  fontWeight: 800,
+  letterSpacing: '-0.02em',
+  fontFamily: "'Inter', system-ui, sans-serif",
 };
 
-const subHeadingStyle = {
-  fontSize: '1.5rem',
-  marginBottom: '20px',
-  color: '#ffcc00',
-  fontFamily: "'Fira Code', monospace",
+const roleStyle = {
+  margin: '0 0 20px',
+  fontSize: '1.25rem',
+  fontWeight: 600,
+  color: '#c7cbd3',
 };
 
-const cursorStyle = {
-  color: '#00d4ff',
-  fontWeight: 'bold',
-  animation: 'blink 1s infinite',
+const bioStyle = {
+  margin: '0 0 36px',
+  fontSize: '1.02rem',
+  lineHeight: 1.7,
+  color: '#9aa3af',
+  maxWidth: '480px',
 };
 
-const buttonStyle = {
-  backgroundColor: '#007BFF',
-  color: '#fff',
-  padding: '12px 25px',
-  border: '2px solid #00d4ff',
-  borderRadius: '10px',
-  fontSize: '16px',
-  fontWeight: 'bold',
-  cursor: 'pointer',
-  boxShadow: '0 0 5px rgba(0,212,255,0.6)',
-  transition: 'all 0.3s ease',
-  textTransform: 'uppercase',
-  letterSpacing: '1px',
-  position: 'relative',
-  overflow: 'hidden',
-  textDecoration: 'none',
+const ctaRowStyle = {
+  display: 'flex',
+  gap: '14px',
+  flexWrap: 'wrap',
 };
 
-const buttonHoverStyle = {
-  transform: 'scale(1.05)',
-  boxShadow: '0 0 10px #00d4ff, 0 0 20px #00d4ff',
-  backgroundColor: '#0056b3',
-};
-
-const glitchTextStyle = {
+const primaryBtnStyle = {
+  background: accent,
+  color: '#0b0d12',
+  borderRadius: '8px',
+  padding: '13px 26px',
+  fontSize: '0.95rem',
+  fontWeight: 700,
   display: 'inline-block',
-  animation: 'glitch 1s infinite',
+  textDecoration: 'none',
+  transition: 'opacity 0.15s ease, transform 0.15s ease',
+};
+
+const secondaryBtnStyle = {
+  border: '1px solid #2d3340',
+  color: '#c7cbd3',
+  borderRadius: '8px',
+  padding: '13px 26px',
+  fontSize: '0.95rem',
+  fontWeight: 600,
+  display: 'inline-block',
+  textDecoration: 'none',
+  transition: 'border-color 0.15s ease, color 0.15s ease',
+};
+
+const photoWrapStyle = {
+  flex: '0 0 auto',
+  position: 'relative',
+  width: '280px',
+  height: '280px',
+};
+
+const glowStyle = {
+  position: 'absolute',
+  inset: '-28px',
+  borderRadius: '50%',
+  background: `radial-gradient(circle, ${accent}26 0%, transparent 70%)`,
 };
 
 const imageStyle = {
+  position: 'relative',
+  width: '280px',
+  height: '280px',
   borderRadius: '50%',
-  width: '300px',
-  height: '300px',
   objectFit: 'cover',
-  border: '4px solid #00d4ff',
-  boxShadow: '0 8px 20px rgba(0,0,0,0.5)',
-  animation: 'float 3s ease-in-out infinite',
+  border: `3px solid ${accent}`,
+  boxShadow: '0 20px 50px rgba(0,0,0,0.55)',
+  display: 'block',
+};
+
+const statSectionStyle = {
+  borderTop: '1px solid #1c2028',
+  borderBottom: '1px solid #1c2028',
+  padding: '44px 64px',
+  backgroundColor: '#0b0d12',
+};
+
+const statGridStyle = {
+  maxWidth: '1100px',
+  margin: '0 auto',
+  display: 'grid',
+  gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+  gap: '32px',
+  textAlign: 'center',
+};
+
+const statItemStyle = {};
+
+const statNumberStyle = {
+  fontSize: '2rem',
+  fontWeight: 800,
+  color: accent,
+};
+
+const statLabelStyle = {
+  marginTop: '6px',
+  fontSize: '0.82rem',
+  color: '#7d8594',
+  fontWeight: 500,
 };
 
 export default Hero;

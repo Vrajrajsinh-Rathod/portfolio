@@ -7,11 +7,13 @@ const About = () => {
 
       <div style={aboutContainer}>
         <p style={aboutText}>
-          I’m <span style={highlight}>Vrajrajsinh Rathod</span>, a passionate and versatile Software Engineer with experience building scalable web and mobile applications across multiple industries and tech stacks.
+          I’m <span style={highlight}>Vrajrajsinh Rathod</span>, a Senior Python Developer and Full Stack Engineer with 5+ years’ experience designing and deploying scalable backend systems and web applications across fintech, e-commerce and healthcare.
           <br /><br />
-          I specialize in <span style={highlight}>Python, PHP, Node.js, React, and RESTful API development</span>, with hands-on experience in cloud platforms like <span style={highlight}>Azure, AWS (S3), and Firebase</span>. I’ve delivered impactful projects ranging from e-commerce platforms to machine learning-based healthcare applications.
+          I’m currently contracting at <span style={highlight}>Roboyo</span>, building Python microservices and REST APIs for a loan origination-to-decisioning platform used by major US fintech clients.
           <br /><br />
-          With a strong academic foundation, I hold an <span style={highlight}>MSc in Computer Science</span> from the University of East London (Distinction). I thrive in both independent and collaborative environments.
+          I specialize in <span style={highlight}>Python, PHP, Node.js, React, and RESTful API development</span>, with hands-on experience in cloud platforms like <span style={highlight}>AWS, Microsoft Azure, and Firebase</span>. I’ve delivered impactful projects ranging from e-commerce platforms to machine learning-based healthcare applications.
+          <br /><br />
+          With a strong academic foundation, I hold an <span style={highlight}>MSc in Computer Science (Distinction)</span> from the University of East London, building on a <span style={highlight}>BEng in Computer Engineering (Distinction)</span> from Gujarat Technological University. I thrive in both independent and collaborative environments.
           <br /><br />
           My goal is to create clean, efficient code and solve real-world problems through technology. I’m always excited to learn new frameworks, optimize performance, and bring ideas to life.
         </p>

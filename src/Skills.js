@@ -14,6 +14,7 @@ const skillsData = [
 const Skills = () => {
   return (
     <section style={sectionStyle} id="skills">
+      <div style={eyebrowStyle}>Skills</div>
       <h2 style={headingStyle}>Technical Skills</h2>
       <div style={gridStyle}>
         {skillsData.map((skillGroup) => (
@@ -21,18 +22,20 @@ const Skills = () => {
             key={skillGroup.title}
             style={cardStyle}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.05)';
-              e.currentTarget.style.boxShadow = '0 0 25px #00d4ff, 0 0 40px #00d4ff';
+              e.currentTarget.style.borderColor = '#2dd4bf';
+              e.currentTarget.style.transform = 'translateY(-3px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = '0 0 15px rgba(0,212,255,0.3)';
+              e.currentTarget.style.borderColor = '#1c2028';
+              e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
             <h3 style={cardHeadingStyle}>{skillGroup.title}</h3>
             <ul style={listStyle}>
               {skillGroup.items.map((item) => (
-                <li key={item} style={listItemStyle}>• {item}</li>
+                <li key={item} style={listItemStyle}>
+                  <span style={dotStyle}></span>{item}
+                </li>
               ))}
             </ul>
           </div>
@@ -43,54 +46,80 @@ const Skills = () => {
 };
 
 const sectionStyle = {
-  padding: '60px 20px',
-  backgroundColor: '#1f1f3a',
+  padding: '90px 20px',
+  backgroundColor: '#0b0d12',
   minHeight: '80vh',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  fontFamily: "'Fira Code', monospace",
+  color: '#e8eaed',
+  fontFamily: "'Inter', system-ui, sans-serif",
+};
+
+const eyebrowStyle = {
+  fontFamily: "'JetBrains Mono', monospace",
+  fontSize: '0.78rem',
+  fontWeight: 600,
+  letterSpacing: '0.08em',
+  color: '#2dd4bf',
+  textTransform: 'uppercase',
+  marginBottom: '12px',
 };
 
 const headingStyle = {
   textAlign: 'center',
-  fontSize: '3rem',
+  fontSize: '2.2rem',
+  fontWeight: 800,
+  letterSpacing: '-0.01em',
   marginBottom: '50px',
-  color: '#00d4ff',
-  textShadow: '0 0 15px #00d4ff, 0 0 30px #00d4ff',
 };
 
 const gridStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-  gap: '25px',
-  maxWidth: '1000px',
+  gap: '20px',
+  maxWidth: '1100px',
   width: '100%',
 };
 
 const cardStyle = {
-  background: 'linear-gradient(135deg, rgba(33,33,60,0.95), rgba(25,25,45,0.95))',
-  padding: '25px',
-  borderRadius: '15px',
-  boxShadow: '0 0 15px rgba(0,212,255,0.3)',
-  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-  color: '#f0f0f0',
+  background: '#12151c',
+  border: '1px solid #1c2028',
+  padding: '26px',
+  borderRadius: '12px',
+  transition: 'border-color 0.2s ease, transform 0.2s ease',
+  color: '#e8eaed',
 };
 
 const cardHeadingStyle = {
-  color: '#00d4ff',
-  fontSize: '1.4rem',
-  marginBottom: '12px',
+  color: '#e8eaed',
+  fontSize: '1.1rem',
+  fontWeight: 700,
+  marginBottom: '14px',
 };
 
 const listStyle = {
   listStyle: 'none',
   paddingLeft: 0,
+  margin: 0,
 };
 
 const listItemStyle = {
-  marginBottom: '8px',
-  color: '#ffcc00',
+  display: 'flex',
+  alignItems: 'center',
+  marginBottom: '10px',
+  color: '#aab0ba',
+  fontSize: '0.95rem',
+};
+
+const dotStyle = {
+  width: '5px',
+  height: '5px',
+  borderRadius: '50%',
+  background: '#2dd4bf',
+  display: 'inline-block',
+  marginRight: '10px',
+  flexShrink: 0,
 };
 
 export default Skills;

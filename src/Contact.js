@@ -47,6 +47,7 @@ const Contact = () => {
         .contact-section {
           padding: 90px 20px 110px;
           background: #10131a;
+          border-top: 1px solid #1c2028;
           color: #e8eaed;
           font-family: 'Inter', system-ui, sans-serif;
           display: flex;

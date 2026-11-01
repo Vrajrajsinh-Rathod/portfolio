@@ -8,19 +8,9 @@ const Header = () => {
     <header style={headerStyle}>
       <nav style={navStyle}>
         <a href="#home" className="logo" aria-label="Vrajrajsinh Rathod — home">
-          <svg width="22" height="22" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M4 10 L23 38 L42 10"
-              stroke="#2dd4bf"
-              strokeWidth="7"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span className="logo-wordmark">
-            <span className="logo-vsr">VSR</span>
-            <span className="logo-rathod">RATHOD</span>
-          </span>
+          <span className="logo-caret">&gt;</span>
+          <span className="logo-vsr">vsr</span>
+          <span className="logo-cursor" aria-hidden="true"></span>
         </a>
 
         <div className="desktop-menu">
@@ -94,39 +84,45 @@ const Header = () => {
 
         .logo {
           display: inline-flex;
-          align-items: center;
-          gap: 9px;
+          align-items: baseline;
+          gap: 2px;
+          font-family: 'JetBrains Mono', monospace;
           text-decoration: none;
-          transition: transform 0.2s ease, opacity 0.2s ease;
+          transition: opacity 0.2s ease;
         }
 
         .logo:hover {
-          transform: translateY(-1px);
-          opacity: 0.9;
+          opacity: 0.85;
         }
 
-        .logo-wordmark {
-          display: flex;
-          flex-direction: column;
-          line-height: 1;
+        .logo-caret {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: #2dd4bf;
         }
 
         .logo-vsr {
-          font-family: 'Inter', system-ui, sans-serif;
-          font-size: 0.95rem;
-          font-weight: 800;
+          font-size: 1.3rem;
+          font-weight: 600;
           letter-spacing: 0.02em;
           color: #e8eaed;
         }
 
-        .logo-rathod {
-          font-family: 'JetBrains Mono', monospace;
-          font-size: 0.5rem;
-          font-weight: 600;
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
-          color: #5b6472;
-          margin-top: 2px;
+        .logo-cursor {
+          width: 9px;
+          height: 18px;
+          background: #2dd4bf;
+          margin-left: 3px;
+          animation: logo-blink 1.1s step-end infinite;
+        }
+
+        @keyframes logo-blink {
+          0%, 55% { opacity: 1; }
+          56%, 100% { opacity: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .logo-cursor { animation: none; }
         }
 
         .nav-link {

@@ -3,144 +3,179 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <section id="contact" style={sectionStyle}>
-      <div style={eyebrowStyle}>Contact</div>
-      <h2 style={headingStyle}>Let's Connect</h2>
-
-      <p style={textStyle}>
-        You can reach me via email at{' '}
-        <a href="mailto:rvrajrajsinh@gmail.com" style={highlightLink}>
-          <FaEnvelope className="icon" />
-          rvrajrajsinh@gmail.com
-        </a>
+    <section id="contact" className="contact-section">
+      <div className="contact-eyebrow">Contact</div>
+      <h2 className="contact-heading">Let's build something</h2>
+      <p className="contact-sub">
+        Open to contract and full-time Senior Python / backend roles in the UK.
+        Email is the fastest way to reach me — I usually reply within a day.
       </p>
 
-      <p style={textStyle}>Or follow me on social media:</p>
+      <div className="contact-card">
+        <a href="mailto:rvrajrajsinh@gmail.com" className="contact-email-btn">
+          <FaEnvelope />
+          rvrajrajsinh@gmail.com
+        </a>
 
-      <div style={socialLinks}>
-        <a
-          href="https://github.com/Vrajrajsinh-Rathod"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={socialLinkStyle}
-        >
-          <FaGithub className="icon" />
-          GitHub
-        </a>
-        <a
-          href="https://www.linkedin.com/in/vrajrajsinh-rathod-894b731b5/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={socialLinkStyle}
-        >
-          <FaLinkedin className="icon" />
-          LinkedIn
-        </a>
+        <div className="contact-divider">
+          <span>or find me on</span>
+        </div>
+
+        <div className="contact-social-row">
+          <a
+            href="https://github.com/Vrajrajsinh-Rathod"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-social-btn"
+          >
+            <FaGithub />
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/vrajrajsinh-rathod-894b731b5/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-social-btn"
+          >
+            <FaLinkedin />
+            LinkedIn
+          </a>
+        </div>
       </div>
 
       <style>{`
-        a {
-          transition: color 0.2s ease, opacity 0.2s ease;
+        .contact-section {
+          padding: 90px 20px 110px;
+          background: #10131a;
+          color: #e8eaed;
+          font-family: 'Inter', system-ui, sans-serif;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
         }
 
-        a:hover {
+        .contact-eyebrow {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.78rem;
+          font-weight: 600;
+          letter-spacing: 0.08em;
           color: #2dd4bf;
-          opacity: 0.9;
+          text-transform: uppercase;
+          margin-bottom: 12px;
         }
 
-        .icon {
-          transition: transform 0.2s ease;
+        .contact-heading {
+          font-size: 2.2rem;
+          font-weight: 800;
+          letter-spacing: -0.01em;
+          margin: 0 0 16px;
+          color: #e8eaed;
         }
 
-        a:hover .icon {
-          transform: scale(1.1);
+        .contact-sub {
+          font-size: 1.05rem;
+          line-height: 1.7;
+          color: #9aa3af;
+          max-width: 520px;
+          margin: 0 0 44px;
         }
 
-        @media (max-width: 768px) {
-          h2 { font-size: 1.9rem !important; }
-          p { font-size: 1rem !important; }
-          .icon { width: 20px !important; height: 20px !important; }
-          #contact { padding: 60px 15px 120px; }
-          a[href^="mailto"] { display: inline-flex; flex-wrap: wrap; margin-top: 8px; gap: 5px; }
+        .contact-card {
+          background: #12151c;
+          border: 1px solid #1c2028;
+          border-radius: 16px;
+          padding: 40px 44px;
+          max-width: 460px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 26px;
+        }
+
+        .contact-email-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          width: 100%;
+          background: #2dd4bf;
+          color: #0b0d12;
+          font-weight: 700;
+          font-size: 1rem;
+          padding: 15px 20px;
+          border-radius: 8px;
+          text-decoration: none;
+          transition: opacity 0.15s ease, transform 0.15s ease;
+        }
+
+        .contact-email-btn:hover {
+          opacity: 0.88;
+          transform: translateY(-1px);
+        }
+
+        .contact-divider {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          color: #5b6472;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.72rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+        }
+
+        .contact-divider::before,
+        .contact-divider::after {
+          content: '';
+          flex: 1;
+          height: 1px;
+          background: #1c2028;
+        }
+
+        .contact-divider span {
+          padding: 0 14px;
+          white-space: nowrap;
+        }
+
+        .contact-social-row {
+          display: flex;
+          gap: 14px;
+          width: 100%;
+        }
+
+        .contact-social-btn {
+          flex: 1;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 9px;
+          border: 1px solid #2d3340;
+          border-radius: 8px;
+          padding: 12px 14px;
+          color: #c7cbd3;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 0.92rem;
+          transition: border-color 0.15s ease, color 0.15s ease;
+        }
+
+        .contact-social-btn:hover {
+          border-color: #2dd4bf;
+          color: #2dd4bf;
         }
 
         @media (max-width: 480px) {
-          h2 { font-size: 1.6rem !important; }
-          p { font-size: 0.95rem !important; }
-          .icon { width: 18px !important; height: 18px !important; }
-          #contact { padding: 50px 10px 100px; }
-          a[href^="mailto"] { margin-top: 10px; gap: 4px; }
+          .contact-heading { font-size: 1.9rem; }
+          .contact-sub { font-size: 1rem; }
+          .contact-card { padding: 30px 24px; }
+          .contact-section { padding: 70px 16px 90px; }
         }
       `}</style>
     </section>
   );
-};
-
-const sectionStyle = {
-  position: 'relative',
-  padding: '90px 20px 150px',
-  minHeight: '60vh',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  backgroundColor: '#10131a',
-  color: '#e8eaed',
-  fontFamily: "'Inter', system-ui, sans-serif",
-  textAlign: 'center',
-  overflow: 'hidden',
-};
-
-const eyebrowStyle = {
-  fontFamily: "'JetBrains Mono', monospace",
-  fontSize: '0.78rem',
-  fontWeight: 600,
-  letterSpacing: '0.08em',
-  color: '#2dd4bf',
-  textTransform: 'uppercase',
-  marginBottom: '12px',
-};
-
-const headingStyle = {
-  fontSize: '2.2rem',
-  fontWeight: 800,
-  letterSpacing: '-0.01em',
-  marginBottom: '25px',
-  color: '#e8eaed',
-};
-
-const textStyle = {
-  fontSize: '1.1rem',
-  marginBottom: '14px',
-  color: '#aab0ba',
-};
-
-const highlightLink = {
-  color: '#e8eaed',
-  fontWeight: 700,
-  textDecoration: 'none',
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: '6px',
-  flexWrap: 'wrap',
-};
-
-const socialLinks = {
-  display: 'flex',
-  justifyContent: 'center',
-  gap: '36px',
-  marginTop: '16px',
-  flexWrap: 'wrap',
-};
-
-const socialLinkStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '9px',
-  fontSize: '1rem',
-  color: '#c7cbd3',
-  textDecoration: 'none',
-  fontWeight: 600,
 };
 
 export default Contact;

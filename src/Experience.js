@@ -60,7 +60,8 @@ const highlightText = (text) => {
 const Experience = () => {
   return (
     <section id="experience" className="experience-section">
-      <h2 className="experience-heading">Experience</h2>
+      <div className="experience-eyebrow">Experience</div>
+      <h2 className="experience-heading">Where I've worked</h2>
 
       <div className="experience-wrapper">
         {experience.map(({ title, company, dates, location, highlights }) => (
@@ -82,130 +83,112 @@ const Experience = () => {
 
       <style>{`
         .experience-section {
-          padding: 60px 20px;
-          min-height: 100vh;
-          background: linear-gradient(to bottom, #1b1b34 0%, #262642 100%);
-          color: #f0f0f0;
-          font-family: 'Fira Code', monospace;
+          padding: 90px 20px;
+          background: #10131a;
+          color: #e8eaed;
+          font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .experience-eyebrow {
+          text-align: center;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.78rem;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          color: #2dd4bf;
+          text-transform: uppercase;
+          margin-bottom: 12px;
         }
 
         .experience-heading {
           text-align: center;
-          font-size: 3rem;
+          font-size: 2.2rem;
+          font-weight: 800;
+          letter-spacing: -0.01em;
           margin-bottom: 50px;
-          color: #00d4ff;
-          text-shadow: 0 0 20px #00d4ff, 0 0 30px #00d4ff;
+          color: #e8eaed;
         }
 
         .experience-wrapper {
           display: flex;
           flex-direction: column;
-          gap: 30px;
+          gap: 20px;
+          max-width: 900px;
+          margin: 0 auto;
         }
 
         .experience-card {
           position: relative;
-          width: 90%;
-          background-color: rgba(42,42,64,0.95);
-          padding: 40px 60px;
-          border-radius: 10px;
-          box-shadow: 0 0 25px rgba(0,212,255,0.4);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          will-change: transform, box-shadow;
-          margin: 0 auto;
-          overflow: hidden;
-        }
-
-        .experience-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 5px;
-          height: 100%;
-          background: linear-gradient(180deg, #00d4ff, #66fcf1, #00d4ff);
-          border-radius: 5px;
-          transition: all 0.3s ease;
-        }
-
-        .experience-card:hover::before {
-          width: 10px;
-          box-shadow: 0 0 15px #00d4ff, 0 0 30px #66fcf1;
+          background: #12151c;
+          border: 1px solid #1c2028;
+          padding: 32px 40px;
+          border-radius: 12px;
+          transition: border-color 0.2s ease, transform 0.2s ease;
         }
 
         .experience-card:hover {
-          transform: scale(1.01);
-          box-shadow: 0 0 40px #00d4ff;
+          border-color: #2dd4bf;
+          transform: translateY(-2px);
         }
 
         .experience-card h3 {
-          color: #00d4ff;
+          color: #e8eaed;
           margin-bottom: 5px;
-          font-size: 1.6rem;
+          font-size: 1.3rem;
+          font-weight: 700;
         }
 
         .experience-company {
-          font-weight: normal;
-          color: #66fcf1;
+          font-weight: 500;
+          color: #7d8594;
         }
 
         .experience-card h4 {
           margin-top: 0;
-          margin-bottom: 15px;
-          color: #aaa;
-          font-size: 0.95rem;
-          font-weight: normal;
+          margin-bottom: 18px;
+          color: #7d8594;
+          font-size: 0.88rem;
+          font-weight: 500;
         }
 
         .experience-dates {
-          color: #aaa;
+          color: #7d8594;
         }
 
         .experience-card ul {
           padding-left: 20px;
-          color: #ccc;
+          margin: 0;
         }
 
         .experience-card li {
-          font-size: 1.05rem;
+          font-size: 1rem;
+          line-height: 1.6;
           margin-bottom: 12px;
-          color: #ccc;
+          color: #aab0ba;
         }
 
-        .experience-card li::before {
-          content: "•";
-          position: absolute;
-          left: -20px;
-          color: #00d4ff;
-          font-weight: bold;
+        .experience-card li::marker {
+          color: #2dd4bf;
         }
 
         .exp-highlight {
-          color: #ffcc00;
-          font-weight: bold;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-
-        .exp-highlight:hover {
-          text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
-          transform: scale(1.05);
+          color: #e8eaed;
+          font-weight: 600;
         }
 
         @media (max-width: 1024px) {
-          .experience-heading { font-size: 2.5rem; }
-          .experience-card { padding: 30px 40px; }
+          .experience-heading { font-size: 1.9rem; }
+          .experience-card { padding: 26px 30px; }
         }
 
         @media (max-width: 768px) {
-          .experience-heading { font-size: 2rem; margin-bottom: 30px; }
-          .experience-card { padding: 20px 25px; }
+          .experience-heading { font-size: 1.7rem; margin-bottom: 30px; }
+          .experience-card { padding: 20px 22px; }
         }
 
         @media (max-width: 480px) {
-          .experience-heading { font-size: 1.8rem; }
-          .experience-card h3 { font-size: 1.3rem; }
-          .experience-card li { font-size: 0.95rem; }
+          .experience-card h3 { font-size: 1.15rem; }
+          .experience-card li { font-size: 0.92rem; }
         }
       `}</style>
     </section>

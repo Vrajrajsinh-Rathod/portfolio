@@ -124,7 +124,7 @@ const Projects = () => {
           display: flex;
           flex-direction: column;
           gap: 20px;
-          max-width: 900px;
+          max-width: 1000px;
           margin: 0 auto;
         }
 

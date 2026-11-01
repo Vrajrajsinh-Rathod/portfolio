@@ -96,6 +96,7 @@ const Projects = () => {
         .projects-section {
           padding: 90px 20px;
           background: #0b0d12;
+          border-top: 1px solid #1c2028;
           color: #e8eaed;
           font-family: 'Inter', system-ui, sans-serif;
         }

@@ -1,11 +1,14 @@
 import React from 'react';
 
 const skillsData = [
-  { title: 'Front-End Development', items: ['ReactJS', 'JavaScript', 'HTML', 'CSS'] },
-  { title: 'Back-End Development', items: ['Node.js', 'PHP', 'Python', 'Flask', 'RESTful APIs'] },
-  { title: 'Databases', items: ['MySQL', 'MongoDB', 'SQLite', 'PostgreSQL'] },
-  { title: 'Cloud & Hosting', items: ['Microsoft Azure', 'AWS (S3)', 'Firebase'] },
-  { title: 'Developer Tools', items: ['Git', 'Docker', 'VSCode', 'PyCharm', 'Postman', 'WordPress'] },
+  { title: 'Languages', items: ['Python', 'JavaScript', 'TypeScript', 'PHP', 'SQL', 'Bash/Shell'] },
+  { title: 'Backend & APIs', items: ['Flask', 'Django', 'FastAPI', 'Node.js', 'Express.js', 'REST APIs', 'GraphQL', 'WebSockets'] },
+  { title: 'Front-End Development', items: ['React', 'Next.js', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'] },
+  { title: 'Data & Pipelines', items: ['Pandas', 'NumPy', 'PySpark', 'ETL Pipelines'] },
+  { title: 'Databases & Caching', items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Elasticsearch'] },
+  { title: 'Cloud & DevOps', items: ['AWS', 'Microsoft Azure', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'GitLab CI/CD'] },
+  { title: 'AI & Automation', items: ['Agentic AI & LLM Workflows', 'TensorFlow', 'scikit-learn'] },
+  { title: 'Tools & Practices', items: ['Git', 'Postman', 'Jira', 'TDD', 'Agile/Scrum'] },
 ];
 
 const Skills = () => {

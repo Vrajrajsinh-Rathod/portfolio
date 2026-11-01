@@ -25,8 +25,8 @@ const About = () => {
 
 const sectionStyle = {
   position: 'relative',
-  padding: '90px 20px',
-  minHeight: '70vh',
+  padding: '100px 20px',
+  borderTop: '1px solid #1c2028',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

@@ -67,7 +67,8 @@ const highlightText = (text) => {
 const Projects = () => {
   return (
     <section id="projects" className="projects-section">
-      <h2 className="projects-heading">Projects</h2>
+      <div className="projects-eyebrow">Projects</div>
+      <h2 className="projects-heading">Things I've built</h2>
 
       <div className="projects-wrapper">
         {projects.map(({ title, year, role, description, highlights, repo }) => (
@@ -93,142 +94,125 @@ const Projects = () => {
 
       <style>{`
         .projects-section {
-          padding: 60px 20px;
-          min-height: 100vh;
-          background: linear-gradient(to bottom, #262642 0%, #1b1b34 100%);
-          color: #f0f0f0;
-          font-family: 'Fira Code', monospace;
+          padding: 90px 20px;
+          background: #0b0d12;
+          color: #e8eaed;
+          font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .projects-eyebrow {
+          text-align: center;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.78rem;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          color: #2dd4bf;
+          text-transform: uppercase;
+          margin-bottom: 12px;
         }
 
         .projects-heading {
           text-align: center;
-          font-size: 3rem;
+          font-size: 2.2rem;
+          font-weight: 800;
+          letter-spacing: -0.01em;
           margin-bottom: 50px;
-          color: #00d4ff;
-          text-shadow: 0 0 20px #00d4ff, 0 0 30px #00d4ff;
+          color: #e8eaed;
         }
 
         .projects-wrapper {
           display: flex;
           flex-direction: column;
-          gap: 30px;
+          gap: 20px;
+          max-width: 900px;
+          margin: 0 auto;
         }
 
         .project-card {
           position: relative;
-          width: 90%;
-          background-color: rgba(42,42,64,0.95);
-          padding: 40px 60px;
-          border-radius: 10px;
-          box-shadow: 0 0 25px rgba(0,212,255,0.4);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          will-change: transform, box-shadow;
-          margin: 0 auto;
-          overflow: hidden;
-        }
-
-        .project-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 5px;
-          height: 100%;
-          background: linear-gradient(180deg, #00d4ff, #66fcf1, #00d4ff);
-          border-radius: 5px;
-          transition: all 0.3s ease;
-        }
-
-        .project-card:hover::before {
-          width: 10px;
-          box-shadow: 0 0 15px #00d4ff, 0 0 30px #66fcf1;
+          background: #12151c;
+          border: 1px solid #1c2028;
+          padding: 32px 40px;
+          border-radius: 12px;
+          transition: border-color 0.2s ease, transform 0.2s ease;
         }
 
         .project-card:hover {
-          transform: scale(1.01);
-          box-shadow: 0 0 40px #00d4ff;
+          border-color: #2dd4bf;
+          transform: translateY(-2px);
         }
 
         .project-card h3 {
-          color: #00d4ff;
+          color: #e8eaed;
           margin-bottom: 5px;
-          font-size: 1.6rem;
+          font-size: 1.3rem;
+          font-weight: 700;
         }
 
         .project-year {
-          font-weight: normal;
-          color: #aaa;
-          font-size: 0.9rem;
+          font-weight: 500;
+          color: #7d8594;
+          font-size: 0.85rem;
         }
 
         .project-card h4 {
           margin-top: 0;
-          margin-bottom: 15px;
-          color: #66fcf1;
+          margin-bottom: 16px;
+          color: #7d8594;
+          font-size: 0.88rem;
+          font-weight: 500;
         }
-          
+
         .project-card p,
         .project-card li {
-          font-size: 1.05rem;
-          margin-bottom: 15px;
-          color: #ccc;
-          
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 12px;
+          color: #aab0ba;
         }
 
         .project-card ul {
           padding-left: 20px;
-          color: #ccc;
+          margin: 0 0 8px;
         }
 
-        .project-card li::before {
-          content: "•";
-          position: absolute;
-          left: -20px;
-          color: #00d4ff;
-          font-weight: bold;
+        .project-card li::marker {
+          color: #2dd4bf;
         }
 
         .highlight {
-          color: #ffcc00;
-          font-weight: bold;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-
-        .highlight:hover {
-          text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
-          transform: scale(1.05);
+          color: #e8eaed;
+          font-weight: 600;
         }
 
         .project-link {
           display: inline-block;
-          margin-top: 5px;
-          color: #00d4ff;
+          margin-top: 4px;
+          color: #2dd4bf;
           text-decoration: none;
-          font-weight: bold;
-          transition: all 0.3s ease;
+          font-weight: 600;
+          font-size: 0.95rem;
+          transition: opacity 0.2s ease;
         }
 
         .project-link:hover {
-          text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+          opacity: 0.75;
         }
 
-        /* Responsive */
         @media (max-width: 1024px) {
-          .projects-heading { font-size: 2.5rem; }
-          .project-card { padding: 30px 40px; }
+          .projects-heading { font-size: 1.9rem; }
+          .project-card { padding: 26px 30px; }
         }
 
         @media (max-width: 768px) {
-          .projects-heading { font-size: 2rem; margin-bottom: 30px; }
-          .project-card { padding: 20px 25px; }
+          .projects-heading { font-size: 1.7rem; margin-bottom: 30px; }
+          .project-card { padding: 20px 22px; }
         }
 
         @media (max-width: 480px) {
-          .projects-heading { font-size: 1.8rem; }
-          .project-card h3 { font-size: 1.3rem; }
+          .project-card h3 { font-size: 1.15rem; }
           .project-card p,
-          .project-card li { font-size: 0.95rem; }
+          .project-card li { font-size: 0.92rem; }
         }
       `}</style>
     </section>

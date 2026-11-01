@@ -85,6 +85,7 @@ const Experience = () => {
         .experience-section {
           padding: 90px 20px;
           background: #10131a;
+          border-top: 1px solid #1c2028;
           color: #e8eaed;
           font-family: 'Inter', system-ui, sans-serif;
         }

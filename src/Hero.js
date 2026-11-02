@@ -37,7 +37,7 @@ const Hero = () => {
             major US fintech clients.
           </p>
 
-          <div style={ctaRowStyle}>
+          <div className="hero-cta-row" style={ctaRowStyle}>
             <a
               href={`${process.env.PUBLIC_URL}/Vrajrajsinh_Rathod_Resume.pdf`}
               target="_blank"
@@ -99,6 +99,9 @@ const Hero = () => {
           }
           #home h1 {
             font-size: 2.2rem !important;
+          }
+          .hero-cta-row {
+            justify-content: center !important;
           }
         }
         @media (max-width: 480px) {

@@ -84,9 +84,9 @@ const Experience = () => {
       <style>{`
         .experience-section {
           padding: 90px 20px;
-          background: #10131a;
-          border-top: 1px solid #1c2028;
-          color: #e8eaed;
+          background: var(--bg-1);
+          border-top: 1px solid var(--border);
+          color: var(--text-0);
           font-family: 'Inter', system-ui, sans-serif;
         }
 
@@ -96,7 +96,7 @@ const Experience = () => {
           font-size: 0.78rem;
           font-weight: 600;
           letter-spacing: 0.08em;
-          color: #2dd4bf;
+          color: var(--accent);
           text-transform: uppercase;
           margin-bottom: 12px;
         }
@@ -107,7 +107,7 @@ const Experience = () => {
           font-weight: 800;
           letter-spacing: -0.01em;
           margin-bottom: 50px;
-          color: #e8eaed;
+          color: var(--text-0);
         }
 
         .experience-wrapper {
@@ -120,20 +120,20 @@ const Experience = () => {
 
         .experience-card {
           position: relative;
-          background: #12151c;
-          border: 1px solid #1c2028;
+          background: var(--bg-2);
+          border: 1px solid var(--border);
           padding: 32px 40px;
           border-radius: 12px;
-          transition: border-color 0.2s ease, transform 0.2s ease;
+          transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.25s ease;
         }
 
         .experience-card:hover {
-          border-color: #2dd4bf;
+          border-color: var(--accent);
           transform: translateY(-2px);
         }
 
         .experience-card h3 {
-          color: #e8eaed;
+          color: var(--text-0);
           margin-bottom: 5px;
           font-size: 1.3rem;
           font-weight: 700;
@@ -141,19 +141,19 @@ const Experience = () => {
 
         .experience-company {
           font-weight: 500;
-          color: #7d8594;
+          color: var(--text-4);
         }
 
         .experience-card h4 {
           margin-top: 0;
           margin-bottom: 18px;
-          color: #7d8594;
+          color: var(--text-4);
           font-size: 0.88rem;
           font-weight: 500;
         }
 
         .experience-dates {
-          color: #7d8594;
+          color: var(--text-4);
         }
 
         .experience-card ul {
@@ -165,15 +165,15 @@ const Experience = () => {
           font-size: 1rem;
           line-height: 1.6;
           margin-bottom: 12px;
-          color: #aab0ba;
+          color: var(--text-2);
         }
 
         .experience-card li::marker {
-          color: #2dd4bf;
+          color: var(--accent);
         }
 
         .exp-highlight {
-          color: #e8eaed;
+          color: var(--text-0);
           font-weight: 600;
         }
 

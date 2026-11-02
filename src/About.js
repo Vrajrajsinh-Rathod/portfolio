@@ -26,13 +26,13 @@ const About = () => {
 const sectionStyle = {
   position: 'relative',
   padding: '100px 20px',
-  borderTop: '1px solid #1c2028',
+  borderTop: '1px solid var(--border)',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  backgroundColor: '#10131a',
-  color: '#e8eaed',
+  backgroundColor: 'var(--bg-1)',
+  color: 'var(--text-0)',
   fontFamily: "'Inter', system-ui, sans-serif",
 };
 
@@ -41,7 +41,7 @@ const eyebrowStyle = {
   fontSize: '0.78rem',
   fontWeight: 600,
   letterSpacing: '0.08em',
-  color: '#2dd4bf',
+  color: 'var(--accent)',
   textTransform: 'uppercase',
   marginBottom: '12px',
 };
@@ -65,11 +65,11 @@ const aboutText = {
   fontSize: '1.08rem',
   lineHeight: 1.85,
   maxWidth: '780px',
-  color: '#aab0ba',
+  color: 'var(--text-2)',
 };
 
 const highlight = {
-  color: '#e8eaed',
+  color: 'var(--text-0)',
   fontWeight: 700,
 };
 

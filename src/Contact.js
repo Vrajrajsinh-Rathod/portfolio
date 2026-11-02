@@ -46,9 +46,9 @@ const Contact = () => {
       <style>{`
         .contact-section {
           padding: 90px 20px 110px;
-          background: #10131a;
-          border-top: 1px solid #1c2028;
-          color: #e8eaed;
+          background: var(--bg-1);
+          border-top: 1px solid var(--border);
+          color: var(--text-0);
           font-family: 'Inter', system-ui, sans-serif;
           display: flex;
           flex-direction: column;
@@ -61,7 +61,7 @@ const Contact = () => {
           font-size: 0.78rem;
           font-weight: 600;
           letter-spacing: 0.08em;
-          color: #2dd4bf;
+          color: var(--accent);
           text-transform: uppercase;
           margin-bottom: 12px;
         }
@@ -71,20 +71,20 @@ const Contact = () => {
           font-weight: 800;
           letter-spacing: -0.01em;
           margin: 0 0 16px;
-          color: #e8eaed;
+          color: var(--text-0);
         }
 
         .contact-sub {
           font-size: 1.05rem;
           line-height: 1.7;
-          color: #9aa3af;
+          color: var(--text-3);
           max-width: 520px;
           margin: 0 0 44px;
         }
 
         .contact-card {
-          background: #12151c;
-          border: 1px solid #1c2028;
+          background: var(--bg-2);
+          border: 1px solid var(--border);
           border-radius: 16px;
           padding: 40px 44px;
           max-width: 460px;
@@ -101,8 +101,8 @@ const Contact = () => {
           justify-content: center;
           gap: 10px;
           width: 100%;
-          background: #2dd4bf;
-          color: #0b0d12;
+          background: var(--accent);
+          color: var(--accent-ink);
           font-weight: 700;
           font-size: 1rem;
           padding: 15px 20px;
@@ -120,7 +120,7 @@ const Contact = () => {
           display: flex;
           align-items: center;
           width: 100%;
-          color: #5b6472;
+          color: var(--text-5);
           font-family: 'JetBrains Mono', monospace;
           font-size: 0.72rem;
           font-weight: 600;
@@ -133,7 +133,7 @@ const Contact = () => {
           content: '';
           flex: 1;
           height: 1px;
-          background: #1c2028;
+          background: var(--border);
         }
 
         .contact-divider span {
@@ -153,10 +153,10 @@ const Contact = () => {
           align-items: center;
           justify-content: center;
           gap: 9px;
-          border: 1px solid #2d3340;
+          border: 1px solid var(--border-strong);
           border-radius: 8px;
           padding: 12px 14px;
-          color: #c7cbd3;
+          color: var(--text-1);
           text-decoration: none;
           font-weight: 600;
           font-size: 0.92rem;
@@ -164,8 +164,8 @@ const Contact = () => {
         }
 
         .contact-social-btn:hover {
-          border-color: #2dd4bf;
-          color: #2dd4bf;
+          border-color: var(--accent);
+          color: var(--accent);
         }
 
         @media (max-width: 480px) {

@@ -2,7 +2,7 @@
 
 Personal portfolio site for my work as a Senior Python Developer / Full Stack Engineer.
 
-🔗 **Live site:** https://vrajrajsinh-rathod.github.io/portfolio/
+🔗 **Live site:** https://vrajraj.is-a.dev/
 
 ## Run locally
 ```bash

@@ -95,9 +95,9 @@ const Projects = () => {
       <style>{`
         .projects-section {
           padding: 90px 20px;
-          background: #0b0d12;
-          border-top: 1px solid #1c2028;
-          color: #e8eaed;
+          background: var(--bg-0);
+          border-top: 1px solid var(--border);
+          color: var(--text-0);
           font-family: 'Inter', system-ui, sans-serif;
         }
 
@@ -107,7 +107,7 @@ const Projects = () => {
           font-size: 0.78rem;
           font-weight: 600;
           letter-spacing: 0.08em;
-          color: #2dd4bf;
+          color: var(--accent);
           text-transform: uppercase;
           margin-bottom: 12px;
         }
@@ -118,7 +118,7 @@ const Projects = () => {
           font-weight: 800;
           letter-spacing: -0.01em;
           margin-bottom: 50px;
-          color: #e8eaed;
+          color: var(--text-0);
         }
 
         .projects-wrapper {
@@ -131,20 +131,20 @@ const Projects = () => {
 
         .project-card {
           position: relative;
-          background: #12151c;
-          border: 1px solid #1c2028;
+          background: var(--bg-2);
+          border: 1px solid var(--border);
           padding: 32px 40px;
           border-radius: 12px;
-          transition: border-color 0.2s ease, transform 0.2s ease;
+          transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.25s ease;
         }
 
         .project-card:hover {
-          border-color: #2dd4bf;
+          border-color: var(--accent);
           transform: translateY(-2px);
         }
 
         .project-card h3 {
-          color: #e8eaed;
+          color: var(--text-0);
           margin-bottom: 5px;
           font-size: 1.3rem;
           font-weight: 700;
@@ -152,14 +152,14 @@ const Projects = () => {
 
         .project-year {
           font-weight: 500;
-          color: #7d8594;
+          color: var(--text-4);
           font-size: 0.85rem;
         }
 
         .project-card h4 {
           margin-top: 0;
           margin-bottom: 16px;
-          color: #7d8594;
+          color: var(--text-4);
           font-size: 0.88rem;
           font-weight: 500;
         }
@@ -169,7 +169,7 @@ const Projects = () => {
           font-size: 1rem;
           line-height: 1.6;
           margin-bottom: 12px;
-          color: #aab0ba;
+          color: var(--text-2);
         }
 
         .project-card ul {
@@ -178,18 +178,18 @@ const Projects = () => {
         }
 
         .project-card li::marker {
-          color: #2dd4bf;
+          color: var(--accent);
         }
 
         .highlight {
-          color: #e8eaed;
+          color: var(--text-0);
           font-weight: 600;
         }
 
         .project-link {
           display: inline-block;
           margin-top: 4px;
-          color: #2dd4bf;
+          color: var(--accent);
           text-decoration: none;
           font-weight: 600;
           font-size: 0.95rem;

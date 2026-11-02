@@ -22,11 +22,11 @@ const Skills = () => {
             key={skillGroup.title}
             style={cardStyle}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#2dd4bf';
+              e.currentTarget.style.borderColor = 'var(--accent)';
               e.currentTarget.style.transform = 'translateY(-3px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = '#1c2028';
+              e.currentTarget.style.borderColor = 'var(--border)';
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
@@ -47,12 +47,12 @@ const Skills = () => {
 
 const sectionStyle = {
   padding: '90px 20px',
-  backgroundColor: '#0b0d12',
-  borderTop: '1px solid #1c2028',
+  backgroundColor: 'var(--bg-0)',
+  borderTop: '1px solid var(--border)',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  color: '#e8eaed',
+  color: 'var(--text-0)',
   fontFamily: "'Inter', system-ui, sans-serif",
 };
 
@@ -61,7 +61,7 @@ const eyebrowStyle = {
   fontSize: '0.78rem',
   fontWeight: 600,
   letterSpacing: '0.08em',
-  color: '#2dd4bf',
+  color: 'var(--accent)',
   textTransform: 'uppercase',
   marginBottom: '12px',
 };
@@ -83,16 +83,16 @@ const gridStyle = {
 };
 
 const cardStyle = {
-  background: '#12151c',
-  border: '1px solid #1c2028',
+  background: 'var(--bg-2)',
+  border: '1px solid var(--border)',
   padding: '26px',
   borderRadius: '12px',
-  transition: 'border-color 0.2s ease, transform 0.2s ease',
-  color: '#e8eaed',
+  transition: 'border-color 0.2s ease, transform 0.2s ease, background-color 0.25s ease',
+  color: 'var(--text-0)',
 };
 
 const cardHeadingStyle = {
-  color: '#e8eaed',
+  color: 'var(--text-0)',
   fontSize: '1.1rem',
   fontWeight: 700,
   marginBottom: '14px',
@@ -108,7 +108,7 @@ const listItemStyle = {
   display: 'flex',
   alignItems: 'center',
   marginBottom: '10px',
-  color: '#aab0ba',
+  color: 'var(--text-2)',
   fontSize: '0.95rem',
 };
 
@@ -116,7 +116,7 @@ const dotStyle = {
   width: '5px',
   height: '5px',
   borderRadius: '50%',
-  background: '#2dd4bf',
+  background: 'var(--accent)',
   display: 'inline-block',
   marginRight: '10px',
   flexShrink: 0,

@@ -28,7 +28,7 @@ const Hero = () => {
           <h1 style={headingStyle}>Vrajrajsinh Rathod</h1>
 
           <p style={roleStyle}>
-            Senior Python Developer <span style={{ color: '#4a5160' }}>·</span> Full Stack Engineer
+            Senior Python Developer <span style={{ color: 'var(--divider-faint)' }}>·</span> Full Stack Engineer
           </p>
 
           <p style={bioStyle}>
@@ -123,9 +123,9 @@ const sectionStyle = {
   justifyContent: 'center',
   gap: '72px',
   flexWrap: 'wrap',
-  backgroundColor: '#0b0d12',
+  backgroundColor: 'var(--bg-0)',
   padding: '96px 64px 72px',
-  color: '#e8eaed',
+  color: 'var(--text-0)',
 };
 
 const contentStyle = {
@@ -175,14 +175,14 @@ const roleStyle = {
   margin: '0 0 20px',
   fontSize: '1.25rem',
   fontWeight: 600,
-  color: '#c7cbd3',
+  color: 'var(--text-1)',
 };
 
 const bioStyle = {
   margin: '0 0 36px',
   fontSize: '1.02rem',
   lineHeight: 1.7,
-  color: '#9aa3af',
+  color: 'var(--text-3)',
   maxWidth: '480px',
 };
 
@@ -194,7 +194,7 @@ const ctaRowStyle = {
 
 const primaryBtnStyle = {
   background: accent,
-  color: '#0b0d12',
+  color: 'var(--accent-ink)',
   borderRadius: '8px',
   padding: '13px 26px',
   fontSize: '0.95rem',
@@ -205,8 +205,8 @@ const primaryBtnStyle = {
 };
 
 const secondaryBtnStyle = {
-  border: '1px solid #2d3340',
-  color: '#c7cbd3',
+  border: '1px solid var(--border-strong)',
+  color: 'var(--text-1)',
   borderRadius: '8px',
   padding: '13px 26px',
   fontSize: '0.95rem',
@@ -237,15 +237,15 @@ const imageStyle = {
   borderRadius: '50%',
   objectFit: 'cover',
   border: `3px solid ${accent}`,
-  boxShadow: '0 20px 50px rgba(0,0,0,0.55)',
+  boxShadow: '0 20px 50px var(--shadow-image)',
   display: 'block',
 };
 
 const statSectionStyle = {
-  borderTop: '1px solid #1c2028',
-  borderBottom: '1px solid #1c2028',
+  borderTop: '1px solid var(--border)',
+  borderBottom: '1px solid var(--border)',
   padding: '44px 64px',
-  backgroundColor: '#0b0d12',
+  backgroundColor: 'var(--bg-0)',
 };
 
 const statGridStyle = {
@@ -268,7 +268,7 @@ const statNumberStyle = {
 const statLabelStyle = {
   marginTop: '6px',
   fontSize: '0.82rem',
-  color: '#7d8594',
+  color: 'var(--text-4)',
   fontWeight: 500,
 };
 

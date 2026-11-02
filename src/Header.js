@@ -9,6 +9,7 @@ const Header = () => {
     return 'dark';
   });
   const menuItems = ['Home', 'About', 'Experience', 'Skills', 'Projects', 'Contact'];
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -18,6 +19,36 @@ const Header = () => {
       // ignore storage errors (private browsing, etc.)
     }
   }, [theme]);
+
+  useEffect(() => {
+    const sectionIds = menuItems.map((item) => item.toLowerCase());
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (sections.length === 0) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible.length > 0) {
+          setActiveSection(visible[0].target.id);
+        }
+      },
+      {
+        rootMargin: '-40% 0px -50% 0px',
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <header style={headerStyle}>
@@ -29,11 +60,18 @@ const Header = () => {
         </a>
 
         <div className="desktop-menu">
-          {menuItems.map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">
-              {item}
-            </a>
-          ))}
+          {menuItems.map((item) => {
+            const id = item.toLowerCase();
+            return (
+              <a
+                key={item}
+                href={`#${id}`}
+                className={`nav-link${activeSection === id ? ' active' : ''}`}
+              >
+                {item}
+              </a>
+            );
+          })}
         </div>
 
         <div className="nav-right">
@@ -80,16 +118,19 @@ const Header = () => {
 
         {menuOpen && (
           <div className="mobile-menu">
-            {menuItems.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="nav-link"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
+            {menuItems.map((item) => {
+              const id = item.toLowerCase();
+              return (
+                <a
+                  key={item}
+                  href={`#${id}`}
+                  className={`nav-link${activeSection === id ? ' active' : ''}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item}
+                </a>
+              );
+            })}
             <a
               href={`${process.env.PUBLIC_URL}/Vrajrajsinh_Rathod_Resume.pdf`}
               target="_blank"
@@ -195,6 +236,14 @@ const Header = () => {
         }
 
         .nav-link:hover::after {
+          width: 100%;
+        }
+
+        .nav-link.active {
+          color: var(--text-0);
+        }
+
+        .nav-link.active::after {
           width: 100%;
         }
 

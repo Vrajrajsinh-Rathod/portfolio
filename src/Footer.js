@@ -12,8 +12,8 @@ const Footer = () => {
 };
 
 const footerStyle = {
-  backgroundColor: '#0b0d12',
-  borderTop: '1px solid #1c2028',
+  backgroundColor: 'var(--bg-0)',
+  borderTop: '1px solid var(--border)',
   padding: '18px 16px',
   textAlign: 'center',
   position: 'fixed',
@@ -24,7 +24,7 @@ const footerStyle = {
 };
 
 const textStyle = {
-  color: '#7d8594',
+  color: 'var(--text-4)',
   fontFamily: "'Inter', system-ui, sans-serif",
   fontWeight: 500,
   fontSize: '0.9rem',
@@ -34,7 +34,7 @@ const textStyle = {
 };
 
 const highlightStyle = {
-  color: '#2dd4bf',
+  color: 'var(--accent)',
   fontWeight: 600,
 };
 
